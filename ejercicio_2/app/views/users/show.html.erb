@@ -1,0 +1,35 @@
+<h1><%= @user.nombre %></h1>
+<div>
+    <% if @user.tipo == "Natural" 
+            flag = true
+        end
+    %>
+    <% if flag %>
+        <label> C.I.: </label>            
+    <% else %>
+        <label> RIF: </label>
+    <% end %>
+    <%= @user.identificacion %>
+    <div>
+        <label> Fecha de Emisión: </label>
+        <%= @user.emision_id%>
+    </div>
+    <div>
+        <label> Fecha de Vencimiento: </label>
+        <%= @user.venc_id %>
+    </div>
+</div>
+<div>
+    <h3> Contacto </h3>
+    <div>
+        <label> Correo: </label>
+        <%= @user.correo%>
+    </div>
+    <div>
+        <label> Telefeno: </label>
+        <%= @user.tlf_prin%>
+        <% unless @user.tlf_sec.blank? %>
+            <label> / </label>
+            <%= @user.tlf_sec %>
+        <%end%>
+</div>

@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_04_13_220657) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", primary_key: "identificacion", id: :integer, default: nil, force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "tipo", limit: 10, null: false
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2021_04_13_220657) do
     t.string "correo", limit: 50, null: false
     t.string "tlf_prin", limit: 15, null: false
     t.string "tlf_sec", limit: 15
+    t.integer "identificacion", null: false
+    t.index ["identificacion"], name: "users_identificacion_key", unique: true
     t.check_constraint "((tipo)::text = 'Natural'::text) OR ((tipo)::text = 'Juridica'::text)", name: "users_tipo_check"
   end
 

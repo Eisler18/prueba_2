@@ -11,5 +11,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        @article = Article.find(:identificacion)
+        @user = User.find(params[:id])
+    end
 end
