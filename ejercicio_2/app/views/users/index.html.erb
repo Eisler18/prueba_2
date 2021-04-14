@@ -1,8 +1,9 @@
-<h1> Usuarios </h1>
+<div class='small-container center-block'>
+    <h1> Usuarios </h1>
 
-<%= link_to "Registrar Usuario", :new_user %>
+    <%= link_to "Registrar Usuario", :new_user %>
 
-<!-- Busca el parcial de _user.html.erb y recorre todos los usuarios, 
-        ya que viene del controlador index-->
-<%= render @user %>
-
+    <!-- Busca el parcial de _user.html.erb y recorre todos los usuarios, 
+            ya que viene del controlador index-->
+    <%= render @user %>
+</div>

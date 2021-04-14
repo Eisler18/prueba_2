@@ -1,1 +1,48 @@
 @import '~bootstrap/scss/bootstrap';
+
+/* La mayor parte de estos estilos fueron sacados de  https://www.youtube.com/watch?v=wSNTT8MLI90&t=6452s*/
+.small-container{
+    width: 100%;
+    max-width: 400px;
+}
+
+.center-block{
+    margin: 0 auto;
+}
+
+.padding{
+    padding: 10px 15px;
+}
+
+.margin-top{
+    margin-top: 1.5em;
+}
+
+.nav-align{
+    text-align: center;
+    ul{
+        @extend .center-block;
+    }
+    li{
+        display: inline-block;
+        list-style: none;
+    }
+}
+
+.field{
+    @extend .margin-top;
+    margin-bottom: 1.5em;
+    label{
+        @extend .text-uppercase;
+        @extend .text-secondary;
+    }
+    &:first-of-type{
+        margin-top: 0;
+    }
+
+    input{
+        @extend .form-control;
+        @extend .bg-light;
+    }
+
+}
