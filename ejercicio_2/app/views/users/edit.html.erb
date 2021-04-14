@@ -1,0 +1,36 @@
+<%= form_with(model: @user, local: true) do |u| %>
+    <div class='field'>
+        <%= u.label :tipo %>
+        <label> Natural </label>
+        <%= u.radio_button :tipo, "Natural"%>
+        <label> Juridica </label>
+        <%= u.radio_button :tipo, "Juridica"%>
+    </div>
+    <div class='field'>
+        <%= u.label :identificacion %>
+        <%= u.text_field :identificacion%>
+        <div class='field'>
+            <%= u.label :emision_id %>
+            <%= u.date_field :emision_id%>
+            <%= u.label :venc_id %>
+            <%= u.date_field :venc_id%>
+        </div>
+    </div>
+    <div class='field'>
+        <%= u.label :nombre %>
+        <%= u.text_field :nombre %>
+    </div>    
+    <div class='field'>
+        <%= u.label :correo %>
+        <%= u.email_field :correo %>
+    </div>
+    <div class='field'>
+        <%= u.label :tlf_prin %>
+        <%= u.text_field :tlf_prin %>
+    </div>
+    <div class='field'>
+        <%= u.label :tlf_sec %>
+        <%= u.text_field :tlf_sec %>
+    </div>
+    <%= u.submit %>
+<%end%> 
