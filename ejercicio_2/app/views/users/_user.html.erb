@@ -1,0 +1,9 @@
+<div  class="card" style="padding:15px;max-width:300px">
+    <h3 class="text-uppercase"> <%= user.nombre %> </h3>
+    <% if user.tipo == "Natural" %>
+        <p class="text-secondary"> C.I.: <%= user.identificacion%></p>
+    <% else %>
+        <p class="text-secondary"> RIF: <%= user.identificacion%></p>
+    <%end%>
+    <%= link_to "Ver detalles", user %>
+</div>

@@ -8,6 +8,8 @@ class UsersController < ApplicationController
     end
 
     def index
+        # Toma todos los usuarios de la tabla
+        @user = User.all
     end
 
     def new
