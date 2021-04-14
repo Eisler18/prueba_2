@@ -33,6 +33,9 @@
             <%= @user.tlf_sec %>
         <%end%>
 </div>
+<div>
+    <%=link_to "Editar usuario", :edit_user %>
+</div>
 
 <div>
     <%=link_to "Eliminar usuario", @user, method: :delete %>
