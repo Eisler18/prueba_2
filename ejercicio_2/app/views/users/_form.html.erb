@@ -1,36 +1,36 @@
-<%= form_with(model: @user, local: true) do |u| %>
-    <div class='field'>
-        <%= u.label :tipo %>
-        <label> Natural </label>
-        <%= u.radio_button :tipo, "Natural"%>
-        <label> Juridica </label>
-        <%= u.radio_button :tipo, "Juridica"%>
-    </div>
-    <div class='field'>
-        <%= u.label :identificacion %>
-        <%= u.text_field :identificacion%>
+<div class='small-container center-block'>
+    <%= form_with(model: @user, local: true) do |u| %>
         <div class='field'>
-            <%= u.label :emision_id %>
+            <%= u.label :tipo %>
+            <div>
+                <label> Natural <%= u.radio_button :tipo, "Natural"%> </label>
+                <label> Juridica <%= u.radio_button :tipo, "Juridica"%> </label>
+            </div>
+        </div>
+        <div class='field'>
+            <%= u.label :identificacion %>
+            <%= u.text_field :identificacion%>
+            <%= u.label "Fecha de emision" %>
             <%= u.date_field :emision_id%>
-            <%= u.label :venc_id %>
+            <%= u.label "Fecha de vencimiento" %>
             <%= u.date_field :venc_id%>
         </div>
-    </div>
-    <div class='field'>
-        <%= u.label :nombre %>
-        <%= u.text_field :nombre %>
-    </div>    
-    <div class='field'>
-        <%= u.label :correo %>
-        <%= u.email_field :correo %>
-    </div>
-    <div class='field'>
-        <%= u.label :tlf_prin %>
-        <%= u.text_field :tlf_prin %>
-    </div>
-    <div class='field'>
-        <%= u.label :tlf_sec %>
-        <%= u.text_field :tlf_sec %>
-    </div>
-    <%= u.submit %>
-<%end%> 
+        <div class='field'>
+            <%= u.label :nombre %>
+            <%= u.text_field :nombre %>
+        </div>    
+        <div class='field'>
+            <%= u.label :correo %>
+            <%= u.email_field :correo %>
+        </div>
+        <div class='field'>
+            <%= u.label "Telefono Principal" %>
+            <%= u.text_field :tlf_prin %>
+            <%= u.label "Telefono Secundario (Opcional)" %>
+            <%= u.text_field :tlf_sec %>
+        </div>
+        <div class='field'>
+            <%= u.submit %>
+        </div>
+    <%end%> 
+</div>
