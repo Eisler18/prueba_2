@@ -1,4 +1,11 @@
 class UsersController < ApplicationController
+    # Es una accion que sucedera antes de show, edit, update y destroy
+    before_action :find_user, except: [:index, :new, :create]
+    
+    def find_user
+        # Busca el usuario de acuerdo a su ID
+        @user = User.find(params[:id])
+    end
 
     def index
     end
@@ -14,24 +21,19 @@ class UsersController < ApplicationController
     end
 
     def show
-        # Busca el usuario de acuerdo a su ID y lo muestra en el html de Show
-        @user = User.find(params[:id])
     end
 
-    def edit
-        @user = User.find(params[:id])  
+    def edit  
     end
 
     def update
         # Actualiza los valores del usuario a traves del HTML de edit
-        @user = User.find(params[:id])
         @user.update!(tipo: params[:user][:tipo], identificacion: params[:user][:identificacion], emision_id: params[:user][:emision_id], venc_id: params[:user][:venc_id], nombre: params[:user][:nombre], correo: params[:user][:correo], tlf_prin: params[:user][:tlf_prin], tlf_sec: params[:user][:tlf_sec])
         redirect_to @user
     end
     
     def destroy
         # Elimina el usuario
-        @user = User.find(params[:id])
         @user.destroy
         redirect_to root_path
     end
